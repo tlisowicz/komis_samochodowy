@@ -1,0 +1,25 @@
+[XC60 Recharge]
+T8
+----
+[S90 Recharge]
+2.4
+5.2
+----
+[V90 Recharge]
+T8
+----
+[Micra Acenta]
+2.4
+5.2
+----
+[Ariya]
+e‑4ORCE
+----
+[Micra Leaf]
+2.4
+5.2
+----
+[Quashqai acenta]
+2.4
+5.2
+----

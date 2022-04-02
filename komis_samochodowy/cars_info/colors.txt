@@ -1,0 +1,37 @@
+[XC60 Recharge]
+niebieski
+srebrny
+czarny
+czerwony
+----
+[S90 Recharge]
+srebrny
+czarny
+niebieski
+----
+[V90 Recharge]
+biały
+czarny
+srebrny
+niebieski
+----
+[Micra Acenta]
+czerwony
+beżowy
+czarny
+----
+[Ariya]
+brązowy
+niebieski
+srebrny
+----
+[Micra Leaf]
+szary
+czerwony
+granatowo-niebieski
+----
+[Quashqai acenta]
+biało-czarny
+czarny
+niebieski
+----

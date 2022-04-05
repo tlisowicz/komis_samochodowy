@@ -19,6 +19,8 @@ namespace komis_samochodowy
         {
             InitializeComponent();
             this.menu = menu;
+            openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
+            this.CenterToScreen();
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -46,6 +48,11 @@ namespace komis_samochodowy
 
         private void bt_add_Click(object sender, EventArgs e)
         {
+            if (tbx_brand.Text.Equals("") || tbx_color.Equals("") || tbx_engine.Equals("") || tbx_model.Equals(""))
+            {
+                MessageBox.Show("Żadne pole nie moze być puste.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string main_path = "..\\..\\cars_info\\";
 
             add_brad(main_path);
@@ -55,6 +62,11 @@ namespace komis_samochodowy
                 add_color(main_path);
                 add_engine(main_path);
                 pictureBox1.BackgroundImage.Save("..\\..\\cars_info\\cars\\" + tbx_brand.Text + " " + tbx_model.Text + " " + tbx_color.Text + ".jpg");
+                MessageBox.Show("Pomyślnie dodano pojazd.", "Powodzenie");
+            }
+            if (checkBox1.Checked)
+            {
+                add_accessories(main_path);
             }
 
         }
@@ -92,7 +104,15 @@ namespace komis_samochodowy
             File.WriteAllLines(path + "\\engines.txt", engines);
             return isError;
         }
-        private bool instert_to_file(ObservableCollection<string> file_content, TextBox parent_tbx, TextBox child_tbx)
+
+        private bool add_accessories(string path)
+        {
+            ObservableCollection<string> accessories = new ObservableCollection<string>(File.ReadAllLines(path + "accessories.txt"));
+            bool isError = instert_to_file(accessories, tbx_model, richTextBox1);
+            File.WriteAllLines(path + "\\accessories.txt", accessories);
+            return isError;
+        }
+        private bool instert_to_file(ObservableCollection<string> file_content, TextBox parent_tbx, Control child_tbx)
         {
             if (!file_content.Contains("[" + parent_tbx.Text + "]"))
             {
@@ -115,6 +135,40 @@ namespace komis_samochodowy
                 }
             }
             return false;
+        }
+
+        private void bt_close_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Na pewno przerwać proces dodawania?", "Zamykanie", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void bt_cancel_Click(object sender, EventArgs e)
+        {
+            tbx_brand.Text = String.Empty;
+            tbx_model.Text = String.Empty;
+            tbx_engine.Text = String.Empty;
+            tbx_color.Text = String.Empty;
+            richTextBox1.Text = String.Empty;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!richTextBox1.Visible)
+            {
+                richTextBox1.Show();
+            }
+            else
+            {
+                richTextBox1.Hide();
+            }
+        }
+
+        private void Section2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            menu.Section2_enabled = false;
         }
     }
 }

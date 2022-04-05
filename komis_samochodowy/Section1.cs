@@ -14,10 +14,12 @@ namespace komis_samochodowy
     public partial class Section1 : Form
     {
         Menu menu;
-        public Section1(Menu menu)
+        Section3 section3;
+        public Section1(Menu menu, Section3 section3)
         {
             InitializeComponent();
             this.menu = menu;
+            this.section3 = section3;
         }
 
         private string [] take_cars_info(string path, string pattern)
@@ -54,6 +56,7 @@ namespace komis_samochodowy
 
         private void Section1_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             string main_path = "..\\..\\cars_info";
             List<string> brands = new List<string>(File.ReadAllLines(main_path +"\\brands.txt"));
             cb_brand.Items.AddRange(brands.ToArray());
@@ -102,6 +105,9 @@ namespace komis_samochodowy
             cb_color.SelectedItem = cb_color.Items[0];
             change_picture();
 
+            checkedListBox1.Items.Clear();
+            checkedListBox1.Items.AddRange(take_cars_info("..\\..\\cars_info\\accessories.txt", cb_model.SelectedItem.ToString()));
+
         }
 
         private void cb_engine_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,7 +122,34 @@ namespace komis_samochodowy
 
         private void bt_pick_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Wybrano model. Proszę przejść do sekcji menu, w celu skonsultowania terminu jazdy próbnej", "Wybrano model");
+            string model = cb_brand.Text + " " + cb_model.Text + " " + "silnik: " + cb_engine.Text + " kolor: " + cb_color.Text;
+            List<string> book_drive = new List<string>(File.ReadAllLines(@"..\..\cars_info\book_drive.txt"));
+            if (!book_drive.Contains(model))
+            {
+
+                File.AppendAllText(@"..\..\cars_info\book_drive.txt", model + "\n");
+                MessageBox.Show("Wybrano model. Proszę przejść do sekcji menu, w celu skonsultowania terminu jazdy próbnej", "Wybrano model");
+            } else
+            {
+                MessageBox.Show("Ten samochód został już wybrany.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkedListBox1.Visible)
+            {
+                checkedListBox1.Show();
+            } else
+            {
+                checkedListBox1.Hide();
+            }
+        }
+
+        private void Section1_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            menu.Section1_enabled = false;
         }
     }
 }

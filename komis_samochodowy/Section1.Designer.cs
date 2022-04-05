@@ -39,6 +39,8 @@ namespace komis_samochodowy
             this.cb_color = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bt_pick = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +50,7 @@ namespace komis_samochodowy
             this.cb_brand.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cb_brand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_brand.FormattingEnabled = true;
-            this.cb_brand.Location = new System.Drawing.Point(28, 115);
+            this.cb_brand.Location = new System.Drawing.Point(31, 67);
             this.cb_brand.Name = "cb_brand";
             this.cb_brand.Size = new System.Drawing.Size(121, 21);
             this.cb_brand.TabIndex = 0;
@@ -58,7 +60,7 @@ namespace komis_samochodowy
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 99);
+            this.label1.Location = new System.Drawing.Point(69, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 1;
@@ -69,7 +71,7 @@ namespace komis_samochodowy
             this.cb_model.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cb_model.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_model.FormattingEnabled = true;
-            this.cb_model.Location = new System.Drawing.Point(28, 177);
+            this.cb_model.Location = new System.Drawing.Point(31, 129);
             this.cb_model.Name = "cb_model";
             this.cb_model.Size = new System.Drawing.Size(121, 21);
             this.cb_model.TabIndex = 2;
@@ -79,7 +81,7 @@ namespace komis_samochodowy
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 161);
+            this.label2.Location = new System.Drawing.Point(69, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 3;
@@ -88,7 +90,7 @@ namespace komis_samochodowy
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 229);
+            this.label3.Location = new System.Drawing.Point(70, 174);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 5;
@@ -99,7 +101,7 @@ namespace komis_samochodowy
             this.cb_engine.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cb_engine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_engine.FormattingEnabled = true;
-            this.cb_engine.Location = new System.Drawing.Point(28, 245);
+            this.cb_engine.Location = new System.Drawing.Point(32, 190);
             this.cb_engine.Name = "cb_engine";
             this.cb_engine.Size = new System.Drawing.Size(121, 21);
             this.cb_engine.TabIndex = 4;
@@ -109,7 +111,7 @@ namespace komis_samochodowy
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(66, 286);
+            this.label4.Location = new System.Drawing.Point(70, 228);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 7;
@@ -120,7 +122,7 @@ namespace komis_samochodowy
             this.cb_color.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cb_color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_color.FormattingEnabled = true;
-            this.cb_color.Location = new System.Drawing.Point(28, 302);
+            this.cb_color.Location = new System.Drawing.Point(32, 244);
             this.cb_color.Name = "cb_color";
             this.cb_color.Size = new System.Drawing.Size(121, 21);
             this.cb_color.TabIndex = 6;
@@ -138,7 +140,7 @@ namespace komis_samochodowy
             // 
             // bt_pick
             // 
-            this.bt_pick.Location = new System.Drawing.Point(28, 369);
+            this.bt_pick.Location = new System.Drawing.Point(36, 463);
             this.bt_pick.Name = "bt_pick";
             this.bt_pick.Size = new System.Drawing.Size(116, 23);
             this.bt_pick.TabIndex = 9;
@@ -146,11 +148,34 @@ namespace komis_samochodowy
             this.bt_pick.UseVisualStyleBackColor = true;
             this.bt_pick.Click += new System.EventHandler(this.bt_pick_Click);
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.HorizontalScrollbar = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(32, 344);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(182, 94);
+            this.checkedListBox1.TabIndex = 10;
+            this.checkedListBox1.Visible = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Location = new System.Drawing.Point(32, 281);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(120, 45);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "Wyposażenie dodatkowe";
+            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Section1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 499);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.bt_pick);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
@@ -163,6 +188,7 @@ namespace komis_samochodowy
             this.Controls.Add(this.cb_brand);
             this.Name = "Section1";
             this.Text = "Section1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Section1_FormClosing_1);
             this.Load += new System.EventHandler(this.Section1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -180,7 +206,9 @@ namespace komis_samochodowy
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox cb_model;
         public System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button bt_pick;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Button bt_pick;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

@@ -29,7 +29,6 @@ namespace komis_samochodowy
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Section2));
             this.bt_add = new System.Windows.Forms.Button();
             this.bt_cancel = new System.Windows.Forms.Button();
             this.bt_close = new System.Windows.Forms.Button();
@@ -43,6 +42,8 @@ namespace komis_samochodowy
             this.tbx_color = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +67,7 @@ namespace komis_samochodowy
             this.bt_cancel.TabIndex = 1;
             this.bt_cancel.Text = "Wyczyść dane";
             this.bt_cancel.UseVisualStyleBackColor = true;
+            this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
             // 
             // bt_close
             // 
@@ -75,6 +77,7 @@ namespace komis_samochodowy
             this.bt_close.TabIndex = 2;
             this.bt_close.Text = "Zrezygnuj";
             this.bt_close.UseVisualStyleBackColor = true;
+            this.bt_close.Click += new System.EventHandler(this.bt_close_Click);
             // 
             // label1
             // 
@@ -143,7 +146,7 @@ namespace komis_samochodowy
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(296, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(363, 264);
@@ -154,14 +157,35 @@ namespace komis_samochodowy
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Location = new System.Drawing.Point(101, 197);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(104, 39);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Wyposażenie dodatkowe";
+            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(105, 242);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
+            this.richTextBox1.TabIndex = 13;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.Visible = false;
             // 
             // Section2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 355);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbx_color);
             this.Controls.Add(this.tbx_engine);
@@ -178,6 +202,7 @@ namespace komis_samochodowy
             this.MaximizeBox = false;
             this.Name = "Section2";
             this.Text = "Section2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Section2_FormClosing);
             this.Load += new System.EventHandler(this.Section2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -200,5 +225,7 @@ namespace komis_samochodowy
         private System.Windows.Forms.TextBox tbx_color;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

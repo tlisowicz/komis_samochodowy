@@ -120,6 +120,7 @@ namespace komis_samochodowy
                 file_content.Add("----");
             }
             int pos = file_content.IndexOf("[" + parent_tbx.Text + "]");
+
             for (int i = pos; i < file_content.Count; ++i)
             {
                 string current_line = file_content.ElementAt(i);

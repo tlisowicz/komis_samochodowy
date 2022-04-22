@@ -46,8 +46,38 @@ czujnik cofania
 system automatycznego parkowania
 chromowane listwy boczne
 ----
-[dasd]
-sdasd
-sda
-sdas
+[Yaris Cross]
+Szyberdach
+napęd 4x4
+czujnik cofania
+system automatycznego parkowania
+chromowane listwy boczne
+----
+[Aygo]
+Szyberdach
+napęd 4x4
+czujnik cofania
+system automatycznego parkowania
+chromowane listwy boczne
+----
+[Model S]
+Pełna Zdolność do Samodzielnej Jazdy
+Automatyczne parkowanie
+Inteligentne Summon
+Wyświetlacz środkowy
+Szklany sufit
+----
+[Model X]
+Pełna Zdolność do Samodzielnej Jazdy
+Automatyczne parkowanie
+Inteligentne Summon
+Wyświetlacz środkowy
+Szklany sufit
+----
+[Model 3]
+Pełna Zdolność do Samodzielnej Jazdy
+Automatyczne parkowanie
+Inteligentne Summon
+Wyświetlacz środkowy
+Szklany sufit
 ----

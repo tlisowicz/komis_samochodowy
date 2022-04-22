@@ -30,15 +30,20 @@ namespace komis_samochodowy
         private void InitializeComponent()
         {
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lst_to_book = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.lst_booked = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbx_hour = new System.Windows.Forms.TextBox();
+            this.tbx_minutes = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.tbx_name = new System.Windows.Forms.TextBox();
+            this.tbx_surname = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -48,58 +53,58 @@ namespace komis_samochodowy
             this.monthCalendar1.TabIndex = 0;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
-            // listBox1
+            // lst_to_book
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.HorizontalScrollbar = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 38);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(205, 95);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.lst_to_book.FormattingEnabled = true;
+            this.lst_to_book.HorizontalScrollbar = true;
+            this.lst_to_book.Location = new System.Drawing.Point(11, 127);
+            this.lst_to_book.Name = "lst_to_book";
+            this.lst_to_book.Size = new System.Drawing.Size(205, 95);
+            this.lst_to_book.TabIndex = 1;
+            this.lst_to_book.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 18);
+            this.label1.Location = new System.Drawing.Point(12, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Wybrane samochody: ";
             // 
-            // listBox2
+            // lst_booked
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.HorizontalScrollbar = true;
-            this.listBox2.Location = new System.Drawing.Point(12, 179);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(205, 95);
-            this.listBox2.TabIndex = 3;
+            this.lst_booked.FormattingEnabled = true;
+            this.lst_booked.HorizontalScrollbar = true;
+            this.lst_booked.Location = new System.Drawing.Point(11, 268);
+            this.lst_booked.Name = "lst_booked";
+            this.lst_booked.Size = new System.Drawing.Size(205, 95);
+            this.lst_booked.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 152);
+            this.label2.Location = new System.Drawing.Point(12, 241);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Zarezerwowane terminy jazd:";
             // 
-            // textBox1
+            // tbx_hour
             // 
-            this.textBox1.Location = new System.Drawing.Point(380, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(33, 20);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "08";
+            this.tbx_hour.Location = new System.Drawing.Point(380, 34);
+            this.tbx_hour.Name = "tbx_hour";
+            this.tbx_hour.Size = new System.Drawing.Size(33, 20);
+            this.tbx_hour.TabIndex = 5;
+            this.tbx_hour.Text = "08";
             // 
-            // textBox2
+            // tbx_minutes
             // 
-            this.textBox2.Location = new System.Drawing.Point(431, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(33, 20);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.Text = "00";
+            this.tbx_minutes.Location = new System.Drawing.Point(431, 34);
+            this.tbx_minutes.Name = "tbx_minutes";
+            this.tbx_minutes.Size = new System.Drawing.Size(33, 20);
+            this.tbx_minutes.TabIndex = 6;
+            this.tbx_minutes.Text = "00";
             // 
             // label3
             // 
@@ -129,20 +134,66 @@ namespace komis_samochodowy
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // tbx_name
+            // 
+            this.tbx_name.Location = new System.Drawing.Point(87, 46);
+            this.tbx_name.Name = "tbx_name";
+            this.tbx_name.Size = new System.Drawing.Size(100, 20);
+            this.tbx_name.TabIndex = 10;
+            // 
+            // tbx_surname
+            // 
+            this.tbx_surname.Location = new System.Drawing.Point(87, 76);
+            this.tbx_surname.Name = "tbx_surname";
+            this.tbx_surname.Size = new System.Drawing.Size(100, 20);
+            this.tbx_surname.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(92, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Dane do rejestracji";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(46, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Imię:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(25, 79);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Nazwisko:";
+            // 
             // Section3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 317);
+            this.ClientSize = new System.Drawing.Size(558, 420);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tbx_surname);
+            this.Controls.Add(this.tbx_name);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbx_minutes);
+            this.Controls.Add(this.tbx_hour);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.lst_booked);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lst_to_book);
             this.Controls.Add(this.monthCalendar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -158,14 +209,19 @@ namespace komis_samochodowy
         #endregion
 
         public System.Windows.Forms.MonthCalendar monthCalendar1;
-        public System.Windows.Forms.ListBox listBox1;
+        public System.Windows.Forms.ListBox lst_to_book;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ListBox listBox2;
+        public System.Windows.Forms.ListBox lst_booked;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbx_hour;
+        private System.Windows.Forms.TextBox tbx_minutes;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbx_name;
+        private System.Windows.Forms.TextBox tbx_surname;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

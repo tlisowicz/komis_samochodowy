@@ -26,7 +26,8 @@ namespace komis_samochodowy
         private void Section3_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            listBox1.Items.AddRange(File.ReadAllLines(@"..\..\cars_info\book_drive.txt"));
+            lst_to_book.Items.AddRange(File.ReadAllLines(@"..\..\cars_info\book_drive.txt"));
+            lst_booked.Items.AddRange(File.ReadAllLines(@"..\..\cars_info\booked_drive.txt"));
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,17 +50,23 @@ namespace komis_samochodowy
             int hour;
             int minutes;
 
-            if (listBox1.SelectedItem is null)
+            if (tbx_name.Text.Equals("") || tbx_name.Text.Equals(""))
             {
-                MessageBox.Show("Prosze wybrać pojazd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Proszę podać imię i nazwisko. ", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (int.TryParse(textBox1.Text, out hour) == false || int.TryParse(textBox2.Text, out minutes) == false)
+            if (lst_to_book.SelectedItem is null)
+            {
+                MessageBox.Show("Proszę wybrać pojazd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (int.TryParse(tbx_hour.Text, out hour) == false || int.TryParse(tbx_minutes.Text, out minutes) == false)
             {
                 MessageBox.Show("Wybrana godzina jest niepoprawna.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox2.Text = String.Empty;
-                textBox1.Text = String.Empty;
+                tbx_minutes.Text = String.Empty;
+                tbx_hour.Text = String.Empty;
                 return;
             }
 
@@ -75,21 +82,22 @@ namespace komis_samochodowy
                 return;
             }
 
-            foreach (string date in listBox2.Items)
+            foreach (string date in lst_booked.Items)
             {
-                if (date.Contains(monthCalendar1.SelectionStart.Date.AddHours(hour).AddMinutes(minutes).ToString("dd/MM/yyyy HH:mm")))
+                if (date.Contains(monthCalendar1.SelectionStart.Date.AddHours(hour).AddMinutes(minutes).ToString("dd/MM/yyyy HH:mm")) && date.Contains(tbx_name.Text + " " + tbx_surname.Text))
                 {
                    MessageBox.Show("Jazda próbna została już zarejestrowana na tę godzinę.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                    return;
                 }
             }
 
-            string final_string = listBox1.SelectedItem + " " + monthCalendar1.SelectionStart.Date.AddHours(hour).AddMinutes(minutes).ToString("dd/MM/yyyy HH:mm");
-            listBox2.Items.Add(final_string);
+            string final_string = lst_to_book.SelectedItem + " " + monthCalendar1.SelectionStart.Date.AddHours(hour).AddMinutes(minutes).ToString("dd/MM/yyyy HH:mm ") + tbx_name.Text + " " + tbx_surname.Text;
+            lst_booked.Items.Add(final_string);
 
             string filename = @"..\..\cars_info\book_drive.txt";
-            File.WriteAllLines(filename, File.ReadAllLines(filename).Where(line => !line.Equals(listBox1.SelectedItem)).ToList());
-            listBox1.Items.Remove(listBox1.SelectedItem);
+            File.WriteAllLines(filename, File.ReadAllLines(filename).Where(line => !line.Equals(lst_to_book.SelectedItem)).ToList());
+            lst_to_book.Items.Remove(lst_to_book.SelectedItem);
+            File.WriteAllText(@"..\..\cars_info\booked_drive.txt", final_string + "\n");
 
         }
     }

@@ -9,3 +9,12 @@ Ariya
 Quashqai acenta
 Micra Leaf
 ----
+[Toyota]
+Yaris Cross
+Aygo
+----
+[Tesla]
+Model S
+Model X
+Model 3
+----

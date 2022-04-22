@@ -35,3 +35,28 @@ biało-czarny
 czarny
 niebieski
 ----
+[Yaris Cross]
+niebieski
+złoty
+czerwony
+----
+[Aygo]
+biały
+czerwony
+pomarańczowy
+----
+[Model S]
+biały
+czarny
+niebieski
+----
+[Model X]
+biały
+czarny
+srebrny
+----
+[Model 3]
+srebrny
+czerwony
+niebieski
+----

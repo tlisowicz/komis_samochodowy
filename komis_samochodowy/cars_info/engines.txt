@@ -1,25 +1,52 @@
 [XC60 Recharge]
-T8
+benzynowy
+diesel
+LPG
 ----
 [S90 Recharge]
-2.4
-5.2
+benzynowy
+diesel
+LPG
 ----
 [V90 Recharge]
-T8
+benzynowy
+diesel
+LPG
 ----
 [Micra Acenta]
-2.4
-5.2
+benzynowy
+diesel
+LPG
 ----
 [Ariya]
-e‑4ORCE
+elektryczny
+hybrydowy
 ----
 [Micra Leaf]
-2.4
-5.2
+hybrydowy
+benzynowy
 ----
 [Quashqai acenta]
-2.4
-5.2
+elektryczny
+hybrydowy
+benzynowy
+----
+[Yaris Cross]
+elektryczny
+hybrydowy
+benzynowy
+----
+[Aygo]
+elektryczny
+hybrydowy
+benzynowy
+----
+[Model S]
+elektryczny
+----
+[Model X]
+elektryczny
+----
+[Model 3]
+elektryczny
 ----

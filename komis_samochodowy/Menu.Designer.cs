@@ -73,7 +73,7 @@ namespace komis_samochodowy
             this.to_section3.Name = "to_section3";
             this.to_section3.Size = new System.Drawing.Size(124, 36);
             this.to_section3.TabIndex = 3;
-            this.to_section3.Text = "Zarezerwój termin jazdy próbnej";
+            this.to_section3.Text = "Zarezerwuj termin jazdy próbnej";
             this.to_section3.UseVisualStyleBackColor = true;
             this.to_section3.Click += new System.EventHandler(this.to_section3_Click);
             // 
